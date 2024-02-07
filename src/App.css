@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Chewy&display=swap");
+.ff_Balsamiq {
+  font-family: "Balsamiq Sans", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ff_chewy {
+  font-family: "Chewy", system-ui;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@font-face {
+  font-family: "lucky";
+  src: url(./assets/fonts/LuckyDino.otf);
+}
+.ff_lucky {
+  font-family: "lucky";
+}
+/* ===========================animations=========================== */
+.plan_ani {
+  animation: fly 7000ms linear infinite;
+}
+.walking-img {
+  animation: walk 9s steps(10) infinite, forward 10s linear infinite;
+}
+.ImgAnimate {
+  animation: walk2 2000s steps(10) infinite, ImgAnimate 10s linear infinite;
+}
+.vertical_motion {
+  animation: mover 1.11s infinite alternate;
+}
+@keyframes fly {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(17px, -17px);
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes walk {
+  0% {
+    background-position: 0px;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    background-size: cover;
+  }
+}
+@keyframes walk2 {
+  0% {
+    background-position: 0px;
+    left: 25%;
+  }
+  100% {
+    background-size: cover;
+    left: 95%;
+  }
+}
+@keyframes forward {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(-1600px);
+  }
+}
+@keyframes ImgAnimate {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(800px);
+  }
+}
+@keyframes mover {
+  0% {
+    transform: translateY(-27px);
+  }
+  100% {
+    transform: translateY(-34px);
+  }
+}
+/* ===========================animations=========================== */
+@media (max-width: 1024px) {
+  .overflow_hidden {
+    overflow: hidden;
+  }
+}
+@media (max-width: 576px) {
+  .walking-img {
+    animation: walk 9s steps(10) infinite, forward 6s linear infinite;
+  }
+  @keyframes forward {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300px);
+    }
   }
 }
